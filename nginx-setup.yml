@@ -1,0 +1,10 @@
+---
+- name: Deploy HTML page
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Copy HTML file
+      copy:
+        content: "<h1>Welcome from Ansible</h1>"
+        dest: /var/www/html/index.html
